@@ -10,9 +10,31 @@ Command-line pipeline for basic cfDNA fragmentomics analysis, including:
 
 All steps are wrapped by a single CLI: `bin/cf_frags.py`.
 
+## 1. Installation and requirements
 
+### Dependencies
 
+- Unix-like system (bash)
+- Python ≥ 3.6
+- R ≥ 4.0
+- Common bioinformatics tools (used inside the bash scripts):
+  - `samtools`
+  - `bedtools`
+  - `awk`, `gawk`,`sed`, `grep`, `sort`, `gzip`, etc.
 
+R packages (used in the plotting scripts):
+
+- `ggplot2`
+-  `data.table`
+
+### Setup
+
+Clone this repository and make the scripts executable:
+
+```bash
+https://github.com/pegahtak/cf_frag.git
+cd fragmentomics
+```
 
 
 
