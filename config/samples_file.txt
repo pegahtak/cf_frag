@@ -1,0 +1,4 @@
+case1	case	test/test_data/case1.bam
+ctrl1	control	test/test_data/ctrl1.bam	
+case2	case	test/test_data/case2.bam
+ctrl2	control	test/test_data/ctrl2.bam

@@ -1,0 +1,12 @@
+arguments:
+  reference: data/hg38.fa
+  input_dir: data
+  output_dir: results
+  threads: 2
+  deduplicate: true
+  picard: /Users/mac/Desktop/picard.jar
+  samples_file: config/samples.txt
+  paired_assay: true
+  regions: data/gene_TSS_pm1kb.bed
+  targeted: true
+  datadir: data

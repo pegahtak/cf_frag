@@ -1,0 +1,4 @@
+bd59af8d84f9da63094b557853d7f2e6  case1.bam
+ee450ca5fb8c331a127e5f5a8419aacd  case2.bam
+8fdb1713c2bb9b6fb8da2da86ee0b3d0  ctrl1.bam
+5a24037271aab3275b1872f28ca5dce8  ctrl2.bam
