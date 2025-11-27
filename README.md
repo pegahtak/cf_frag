@@ -47,7 +47,7 @@ chmod +x bin/batch.sh
 
 ## 2. Directory layout (expected)
 
-A typical layout:
+layout:
 
 ```text
 fragmentomics/
@@ -56,21 +56,45 @@ fragmentomics/
 │   ├── get_TSS.sh
 │   ├── preprocess_bam.sh
 │   ├── compute_coverage.sh
-│   └── merge_plots.sh
+│   ├── merge_plots.sh
+│   └── batch.sh
 ├── scripts/
-│   └── merge.R              # R script that draws merged histograms
+│   └── merge.R              # R script for plotting and get
+│   ├── 04_plot_cov_norm.R
+│   ├── periodicity_confirmation.R
+│   ├── stats.
+│   └── 04_plot_cov_norm.R
 ├── data/
 │   ├── gencode.vXX.annotation.gtf
 │   ├── hg38.chrom.sizes
-│   ├── manifest.tsv         # sample → BAM mapping
-│   └── sample_files.txt     # sample → group mapping
-└── results/
-    └── ...                  # created by the pipeline
+├── results/
+│   └── ...                  # created by the pipeline
+├── test/
+│   └── test_data
+└── batch_scripts/
+│   └── ...  
+
 ```
 
 
+## 3. Input files
 
+### 3.1 Reference files
 
+**Genome files (e.g. GENCODE, hg38)**  
+
+Download the human reference genome annotation from GENCODE and place it in the `data` directory, then unzip it. For example:
+
+```bash
+wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.annotation.gtf.gz -P data/
+cd data
+gunzip gencode.v49.annotation.gtf.gz
+cd ..
+```
+This produces:
+```text
+  data/gencode.v49.annotation.gtf
+```
 
 
 
