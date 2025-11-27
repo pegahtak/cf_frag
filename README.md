@@ -196,8 +196,10 @@ if everything works, you should see:
 
 A single-sample fragment length distribution with expected mono/di/tri-nucleosome peaks:
 ![Fragment length example](images/dristribution_nucleosome.png)
+
 Collapsed smoothed length distributions for all samples, grouped by case/control:
 ![Collapsed smoothed length](images/histogram_all.png)
+
 A detrended periodogram showing ~10 bp nucleosomal periodicity in the 100–170 bp window:
 ![Periodogram](images/periodogram_detrend.png)
 
