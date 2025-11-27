@@ -175,6 +175,7 @@ bin/cf_frags.py batch --sample-file config/samples_file.txt \
 you can test these commands with some small bam files.
 Download sample bam files from https://drive.google.com/drive/folders/1AVm5-fq6yglTLQLgoFXOkHsn-q10yb6Y?usp=sharing
 which contains two cancerous and two healthy cfDNA BAM files. Place them them in `test/test_data`. 
+
 Make the manifest file:
 ```text
 case1	case	test/test_data/case1.bam
