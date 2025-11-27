@@ -35,6 +35,38 @@ Clone this repository and make the scripts executable:
 https://github.com/pegahtak/cf_frag.git
 cd fragmentomics
 ```
+make the scripts executable:
+```bash
+chmod +x bin/cf_frags.py
+chmod +x bin/get_TSS.sh
+chmod +x bin/preprocess_bam.sh
+chmod +x bin/compute_coverage.sh
+chmod +x bin/merge_plots.sh
+chmod +x bin/batch.sh
+```
+
+## 2. Directory layout (expected)
+
+A typical layout:
+
+```text
+fragmentomics/
+├── bin/
+│   ├── cf_frags.py          # main CLI wrapper
+│   ├── get_TSS.sh
+│   ├── preprocess_bam.sh
+│   ├── compute_coverage.sh
+│   └── merge_plots.sh
+├── scripts/
+│   └── merge.R              # R script that draws merged histograms
+├── data/
+│   ├── gencode.vXX.annotation.gtf
+│   ├── hg38.chrom.sizes
+│   ├── manifest.tsv         # sample → BAM mapping
+│   └── sample_files.txt     # sample → group mapping
+└── results/
+    └── ...                  # created by the pipeline
+```
 
 
 
