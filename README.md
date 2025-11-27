@@ -93,10 +93,22 @@ cd ..
 ```
 This produces:
 ```text
-  data/gencode.v49.annotation.gtf
+data/gencode.v49.annotation.gtf
 ```
+Download chromosome sizes for the matching human reference (e.g. hg38) and place the file in the data directory, for example:
+```text
+data/hg38.chrom.sizes
+```
+### 3.2 Samples files (used for batch mode):
+A simple tab separated text file with three columns: sample name, condition, path to the bam file.
+```bash
+config/samples_file.txt
 
-
+case1   case    data/case1.bam
+ctrl1   control data/ctrl1.bam        
+case2   case    data/case2.bam
+ctrl2   control data/ctrl2.bam
+```
 
 This pipeline inputs bam files, sorts them and produces fragmentomics 
 features and plot them.
