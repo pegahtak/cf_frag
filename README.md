@@ -108,26 +108,19 @@ case1   case    data/case1.bam
 ctrl1   control data/ctrl1.bam        
 case2   case    data/case2.bam
 ctrl2   control data/ctrl2.bam
+
 ```
-
-This pipeline inputs bam files, sorts them and produces fragmentomics 
-features and plot them.
-
-
-Test data obtained from cfDNA pipe paper. both test and control
-
-Optional
-#prepare Transcription Start Sites.
-gene annotations of GRCh38 genome has been obtained from GENCODE and placed in the data folder.(https://www.gencodegenes.org/human/)
-You can replace other versions with --gtf option.
-To obtain the TSS regions run 
-cd bin
-cf_frags.py prepare_TSS --gtf data/gencode.v49.annotation.gtf \
---chrom-sizes data/hg38.chrom.sizes --outdir data
-This code obtains start point of every transcript and then collapeses TSS for transcripts with the same gene id
-then  a window of +/- 1kb around the start point is considered as the TSS.
-You can change the size of window by the option --window (e.g. --window 2500)
-
-#prepare BAM files
-
+## 4. CLI usage
+All commands are operated through `cf_frags.py`:
+```bash
+bin/cf_frags.py <subcommand> [options]
+```
+### 4.1 prepare_TSS
+This command extracted transcription start points from the genome annotation file and stores them in `data/gene_TSS_point.bed`.
+Then it will expand the points 1000bp at both directions. The window size can be changed using `--window` option.
+```bash
+bin/cf_frags.py prepare_TSS --gtf data/gencode.{version}.annotation.gtf \
+--chrom-sizes data/hg38.chrom.sizes \
+--outdir data --window {window_size/2}
+```
 
