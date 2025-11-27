@@ -139,7 +139,14 @@ bin/cf_frags.py preprocess-bam \
 
 
 ### 4.3 coverage
-Compute coverage and normalized signal around regions for a single sample.
-For each sample, this step generates a summary, normalizes the fragment length \
-distribution, and computes/plots FFT-based signals to confirm periodicity in \
-the 100–180 bp range.
+Compute coverage and normalized signal around regions using `--upstream-bp` and `--downstream-bp` options (by default 2500).
+For each sample, this step generates a summary, normalizes the fragment length
+distribution, and computes/plots FFT-based signals to confirm periodicity in the 100–180 bp range.
+```bash
+cf_frag coverage --fragments results/case1/case.bed --regions data/gene_TSS_window.bed \
+--sample case1 \
+--upstream-bp 2500 --downstream-bp 2500\
+--outdir results/case1 \
+--chrom-sizes data/hg38.chrom.sizes --len-freq results/case1_length_freq.tsv
+```
+
