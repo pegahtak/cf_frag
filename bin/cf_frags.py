@@ -67,7 +67,6 @@ def cmd_coverage(args):
     fragments = Path(args.fragments).resolve()
     regions = Path(args.regions).resolve()
 
-    # Example: call your script that runs bedtools map + normalization
     cmd = [
         str(HERE / "compute_coverage.sh"),
         "--fragments", str(fragments),
@@ -198,7 +197,7 @@ def build_parser():
 def main(argv=None):
     parser = build_parser()
     args = parser.parse_args(argv)
-    # Attach dry_run to args for all subcommands
+
     if not hasattr(args, "func"):
         parser.print_help()
         sys.exit(1)
