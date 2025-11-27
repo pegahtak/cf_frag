@@ -117,10 +117,29 @@ bin/cf_frags.py <subcommand> [options]
 ```
 ### 4.1 prepare_TSS
 This command extracted transcription start points from the genome annotation file and stores them in `data/gene_TSS_point.bed`.
-Then it will expand the points 1000bp at both directions. The window size can be changed using `--window` option.
+Then it will expand the points 1000bp at both directions `data/gene_TSS_window.bed`. The window size can be changed using `--window` option.
 ```bash
 bin/cf_frags.py prepare_TSS --gtf data/gencode.{version}.annotation.gtf \
 --chrom-sizes data/hg38.chrom.sizes \
 --outdir data --window {window_size/2}
 ```
+### 4.2 preprocess-bam
+Sort and deduplicate/filter BAM files then produces a fragment BED and, a summary for fragment length distributions per sample.
+example usage:
+```bash
+bin/cf_frags.py preprocess-bam \
+  --bam /path/to/case1.dedup.bam \
+  --sample case1 \
+  --min-len 50 \
+  --max-len 500 \
+  --outdir results/case1
 
+```
+`--min-len` and `--max-len` if provided, are used to filter out fragments outside the range.
+
+
+### 4.3 coverage
+Compute coverage and normalized signal around regions for a single sample.
+For each sample, this step generates a summary, normalizes the fragment length \
+distribution, and computes/plots FFT-based signals to confirm periodicity in \
+the 100–180 bp range.
