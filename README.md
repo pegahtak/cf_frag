@@ -60,15 +60,18 @@ cf_frag/
 │   ├── compute_coverage.sh
 │   ├── merge_plots.sh
 │   └── batch.sh
+├── config/
+│   ├── config.yaml
+│   └── samples_file.txt
 ├── scripts/
-│   └── merge.R              # R script for plotting and get
+│   ├── merge.R              # R script for plotting and get
 │   ├── 04_plot_cov_norm.R
 │   ├── periodicity_confirmation.R
 │   ├── stats.
 │   └── 04_plot_cov_norm.R
 ├── data/
 │   ├── gencode.vXX.annotation.gtf
-│   ├── hg38.chrom.sizes
+│   └── hg38.chrom.sizes
 ├── results/
 │   └── ...                  # created by the pipeline
 ├── test/
